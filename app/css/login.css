@@ -1,0 +1,86 @@
+:root {
+    --gray: rgb(197,195,189);
+    --highest-gray: rgb(240,240,238);
+    --darkest-gray: rgb(98,97,94);
+    --shade-gray: rgb(158,156,151);
+    --ui-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --serif-font: Georgia, 'Times New Roman', Times, serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(53,0,126);
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+form {
+    background-color: var(--gray);
+    border-top: 4px solid var(--highest-gray);
+    border-bottom: 4px solid var(--darkest-gray);
+    border-left: 4px solid var(--shade-gray);
+    border-right: 4px solid var(--shade-gray);
+
+    font-family: var(--serif-font);
+
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    min-width: 600px;
+}
+.form-content {
+    padding: 30px;
+    max-width: 500px;
+    margin: auto;
+}
+form p, form label, form input {
+    display: block;
+}
+.login-prompt {
+    padding-bottom: 20px;
+}
+label {
+    padding: 4px 0;
+}
+input {
+    width: 100%;
+}
+input:not(last-child) {
+    margin-bottom: 10px;
+}
+input[type="submit"] {
+    background-color: var(--gray);
+    margin: 20px auto 10px auto;
+    width: fit-content;
+    padding: 4px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: var(--ui-font);
+}
+input[type="text"], input[type="password"] {
+    border: none;
+}
+.login-error {
+    width: 100%;
+    background-color: rgb(0,0,0);
+    margin: 0;
+    padding: 2px 4px;
+    color: rgb(255,255,255);
+    font-family: var(--ui-font);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 600px) {
+    form {
+        min-width: revert;
+        width: 100%;
+    }
+}
