@@ -1,15 +1,7 @@
 <?php
 session_start();
 
-// Clean-up functions
-function done() {
-    header('Location: index.php');
-    exit();
-}
-function fail($msg) {
-    $_SESSION['uploaderr'] = $msg;
-    done();
-}
+require 'cleanup.php';
 
 // Disable HTML error reporting
 error_reporting(0);
