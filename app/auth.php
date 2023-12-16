@@ -4,10 +4,11 @@ function checkAuth() {
     if(isset($_COOKIE['auth'])) {
         $auth = ($_COOKIE['auth'] === 'authorized!');
     }
-    if ($auth) {
-        $user = $_COOKIE['user'];       
-    } else {
+    if ($auth === false) {
         // Redirect to login page
         header('Location: login.php');
     }
+}
+function getUser() {
+    return $_COOKIE['user'];
 }

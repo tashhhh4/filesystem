@@ -4,6 +4,7 @@ session_start();
 // Login Required
 require 'auth.php';
 checkAuth();
+$user = getUser();
 
 // Check session messages
 $errorStart = '<div class="message error">';
