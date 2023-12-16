@@ -24,6 +24,10 @@ if(isset($_SESSION['uploaderr'])) {
     unset($_SESSION['uploaderr']);
 }
 
+// Get Files
+require 'FileFunctions.php';
+$files = getFiles('userfiles/'.$user);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,16 +60,11 @@ if(isset($_SESSION['uploaderr'])) {
     <h1>My Files</h1>
     <section class="white-block my-files">
       <ul>
-        <li>file1.txt</li>
-        <li>file2.txt</li>
-        <li>file1.txt</li>
-        <li>file2.txt</li>
-        <li>file1.txt</li>
-        <li>file2.txt</li>
-        <li>file1.txt</li>
-        <li>file2.txt</li>
-        <li>file1.txt</li>
-        <li>file2.txt</li>
+        <?php
+        foreach ($files as $file) {
+            echo '<li>'.$file.'</li>';
+        }
+        ?>
       </ul>
     </section>
   </div>
