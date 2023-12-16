@@ -1,0 +1,65 @@
+:root {
+    --purple-gray: rgb(107,93,126);
+    --sky-blue: rgb(0,138,255);
+    --pale: rgb(247,242,255);
+    --pale-medium: rgb(204,197,214);
+    --pale-shadow: rgb(137,128,150);
+    --ui-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --serif-font: Georgia, 'Times New Roman', Times, serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--purple-gray);
+    font-family: var(--serif-font);
+}
+
+/* TOP BAR */
+.top-bar {
+    background-color: rgb(0,0,0);
+    color: rgb(255,255,255);
+    font-family: var(--ui-font);
+    padding: 2px 4px 4px 4px;
+
+    display: flex;
+    justify-content: space-between;
+}
+.logout-label {
+    text-transform: uppercase;
+    font-family: var(--serif-font);
+}
+.logout-form input[type="submit"] {
+    background-color: var(--sky-blue);
+    border: none;
+    color: rgb(255,255,255);
+    font-weight: bold;
+    padding: 3px 4px;
+    margin: 0 2px 0 7px;
+    text-transform: uppercase;
+    font-family: var(--ui-font);
+}
+
+/* MAIN SECTION */
+.width {
+    max-width: 1400px;
+    margin: auto;
+    padding: 2px;
+}
+h1 {
+    color: rgb(255,255,255);
+    padding: 10px;
+}
+.white-block {
+    background-color: var(--pale);
+    border-top: 4px solid rgb(255,255,255);
+    border-bottom: 4px solid var(--pale-shadow);
+    border-left: 4px solid var(--pale-medium);
+    border-right: 4px solid var(--pale-medium);
+
+    padding: 8px;
+}
