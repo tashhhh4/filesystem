@@ -6,6 +6,7 @@
     --pale-medium: rgb(204,197,214);
     --pale-shadow: rgb(137,128,150);
     --lilac: rgb(216,188,255);
+    --lightblue: rgb(187,217,255);
     --ui-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --serif-font: Georgia, 'Times New Roman', Times, serif;
 }
@@ -91,6 +92,24 @@ input[type="submit"]#upload_button {
 }
 .my-files li {
     display: inline-block;
+    margin: 2px 40px 2px 4px;
+    padding: 4px;
+    height: 30px;
+}
+.my-files li .file {
     width: 200px;
-    height: 24px;
+    display: inline-block;
+}
+.download, .delete {
+    display: inline-block;
+    margin: 0 4px;
+    opacity: 0;
+    background-color: var(--pale);
+    padding: 4px;
+}
+.my-files li:hover {
+    background-color: var(--lightblue);
+}
+.my-files li:hover .button {
+    opacity: 100;
 }

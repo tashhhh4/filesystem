@@ -62,7 +62,9 @@ $files = getFiles('userfiles/'.$user);
       <ul>
         <?php
         foreach ($files as $file) {
-            echo '<li>'.$file.'</li>';
+            echo '<li><span class="file">'.$file.'</span>' .
+            '<span class="button download">DL</span>' .
+            '<span class="button delete">DEL</span></li>';
         }
         ?>
       </ul>
