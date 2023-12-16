@@ -4,6 +4,7 @@
     --pale: rgb(247,242,255);
     --pale-medium: rgb(204,197,214);
     --pale-shadow: rgb(137,128,150);
+    --lilac: rgb(216,188,255);
     --ui-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --serif-font: Georgia, 'Times New Roman', Times, serif;
 }
@@ -62,4 +63,24 @@ h1 {
     border-right: 4px solid var(--pale-medium);
 
     padding: 8px;
+}
+input[type="file"] {
+    font-family: var(--serif-font);
+    font-size: 16px;
+}
+input[type="file"]::file-selector-button, input[type="submit"] {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: var(--ui-font);
+    letter-spacing: .5px;
+    background-color: var(--pale);
+    border-top: 3px solid rgb(255,255,255);
+    border-bottom: 3px solid var(--pale-shadow);
+    border-right: 3px solid var(--pale-medium);
+    border-left: 3px solid var(--pale-medium);
+    padding: 2px 6px;
+}
+input[type="submit"]#upload_button {
+    background-color: var(--lilac);
 }

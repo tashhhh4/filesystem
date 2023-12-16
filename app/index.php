@@ -1,4 +1,6 @@
-<?php 
+<?php
+session_start();
+
 // Check Auth
 $auth = false;
 if(isset($_COOKIE['auth'])) {
@@ -10,6 +12,18 @@ if ($auth) {
     // Redirect to login page
     header('Location: login.php');
 }
+
+// Check session messages
+$errorStart = '<div class="message error">';
+$errorEnd = '</div>';
+$uploadMsg = '';
+$filesMsg = '';
+
+if(isset($_SESSION['uploaderr'])) {
+    $uploadMsg = $errorStart . $_SESSION['uploaderr'] . $errorEnd;
+    unset($_SESSION['uploaderr']);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,9 +42,15 @@ if ($auth) {
   </div>
 
   <div class="width">
-    <h1>Add Files</h1>
+    <div class="h1-feedback-block">
+      <h1>Add Files</h1>
+      <span class="feedback"><?php echo $uploadMsg; ?></span>
+    </div>
     <section class="white-block add-files">
-      stuff
+      <form enctype="multipart/form-data" action="FileUpload.php" method="post">
+        <input name="file" type="file" required>
+        <input id="upload_button" type="submit" value="Upload">
+      </form>
     </section>
 
     <h1>My Files</h1>
