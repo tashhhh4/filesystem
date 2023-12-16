@@ -35,6 +35,7 @@ $files = getFiles('userfiles/'.$user);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/files.css">
+  <link rel="stylesheet" href="css/icomoon/style.css">
   <title>File Browser - My Files: <?php echo $user; ?></title>
 </head>
 <body>
@@ -63,8 +64,8 @@ $files = getFiles('userfiles/'.$user);
         <?php
         foreach ($files as $file) {
             echo '<li><span class="file">'.$file.'</span>' .
-            '<span class="button download">DL</span>' .
-            '<span class="button delete">DEL</span></li>';
+            '<span class="button download"><i class="icon-download"></i></span>' .
+            '<span class="button delete"><i class="icon-bin"></i></span></li>';
         }
         ?>
       </ul>
