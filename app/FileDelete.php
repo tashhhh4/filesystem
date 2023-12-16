@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+// Login Required
+require 'auth.php';
+checkAuth();
+
+// Script finishing utility
 require 'cleanup.php';
 
 // Get filename

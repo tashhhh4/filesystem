@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+// Login Required
+require 'auth.php';
+checkAuth();
+
+// Script Ending Utility
 require 'cleanup.php';
 
 // Disable HTML error reporting

@@ -1,4 +1,7 @@
 <?php
+// Login Required
+require 'auth.php';
+checkAuth();
 
 // Set up error message
 $errorMsg = '';

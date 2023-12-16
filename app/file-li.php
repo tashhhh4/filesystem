@@ -2,7 +2,7 @@
   <span class="file"><?php echo $file; ?></span>
 
   <span class="download">
-    <form action="download.php" method="post">
+    <form action="download.php" method="post" target="_blank">
       <input type="hidden" name="filename" value="<?php echo $file; ?>">
       <span class="i-wrapper"><i class="icon-download"></i>
       <input type="submit" value="S">
@@ -15,7 +15,6 @@
       <input type="hidden" name="filename" value="<?php echo $file; ?>">
       <span class="i-wrapper"><i class="icon-bin"></i>
       <input type="submit" value="S"></span>
-    
     </form>
   </span>
 
