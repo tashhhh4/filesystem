@@ -62,10 +62,10 @@ $files = getFiles('userfiles/'.$user);
     <section class="white-block my-files">
       <ul>
         <?php
+        $i = 0;
         foreach ($files as $file) {
-            echo '<li><span class="file">'.$file.'</span>' .
-            '<span class="button download"><i class="icon-download"></i></span>' .
-            '<span class="button delete"><i class="icon-bin"></i></span></li>';
+          include 'file-li.php';
+          $i++;
         }
         ?>
       </ul>
