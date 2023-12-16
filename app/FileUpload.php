@@ -16,7 +16,8 @@ ini_set('display_errors', 0);
 include 'debug.php';
 
 // Check for valid user folder
-$user_dir = 'userfiles' . '/' . 'admin';
+$user = $_COOKIE['user'];
+$user_dir = 'userfiles' . '/' . $user;
 $makeNew = false;
 if (file_exists($user_dir)) {
     if(is_dir($user_dir)) {
@@ -32,9 +33,9 @@ if($makeNew == true) {
     if(mkdir($user_dir, 0777, true)) {}
     else {
         if(file_exists($user_dir)) {
-            fail('Failed to create folder for admin - a conflicting filename exists.');
+            fail('Failed to create folder for ' .$user .' - a conflicting filename exists.');
         }
-        fail('Failed to create a folder for admin.');
+        fail('Failed to create a folder for ' . $user . '.');
     }
 }
 
