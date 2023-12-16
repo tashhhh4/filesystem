@@ -1,0 +1,2 @@
+## How to set the username and password
+The app requires a username and password to login. The values are retrieved from a file called "config.php". To make this file, save a new version of "config.sample.php" -> "config.php", replacing the values of the $VALIDUSER and $VALIDPASSWORD with your own.

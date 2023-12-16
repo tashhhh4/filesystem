@@ -1,26 +1,20 @@
 <?php
 
-// DEBUG
-include 'debug.php';
-
-logwrite('At top of login page.');
+// CONFIG
+require 'config.php';
 
 // Define error messages
 $loginError = '';
 
-$valid_user = 'user1';
-$valid_password = 'password1';
-
 // Check form
-if(isset($_POST['username'])) { $username = $_POST['username']; logwrite('Username was set to ' . $username);}
+if(isset($_POST['username'])) { $username = $_POST['username']; }
 if(isset($_POST['password'])) { $password = $_POST['password']; }
 
 if(isset($username) AND isset($password)) {
-    if ($username === $valid_user AND $password === $valid_password) {    
+    if ($username === $VALIDUSER AND $password === $VALIDPASSWORD) {
         // Login User
         setcookie('auth', 'authorized!', time()+7200, '/');
         setcookie('user', $username, time()+7200, '/');
-        logwrite('User was successfully logged in.');
         header('Location: index.php');
 
     } else {
