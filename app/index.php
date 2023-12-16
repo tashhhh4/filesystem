@@ -12,6 +12,10 @@ if ($auth) {
 }
 ?>
 
+<form action="LogoutUser.php">
+    <span class="login-status">Logged in as <?php echo $user; ?></span><input type="submit" value="Logout">
+</form>
+
 Hello this is the Index Page
 
 You need to be logged in to see this stuff.
