@@ -7,7 +7,6 @@ function done() {
     exit();
 }
 function fail($msg) {
-    logwrite('Inside the fail() function.');
     $_SESSION['uploaderr'] = $msg;
     done();
 }
@@ -23,7 +22,6 @@ include 'debug.php';
 $user_dir = 'userfiles' . '/' . 'admin';
 $makeNew = false;
 if (file_exists($user_dir)) {
-    logwrite("We found that the file exists.");
     if(is_dir($user_dir)) {
     } else {
         $makeNew = true;
@@ -37,11 +35,24 @@ if($makeNew == true) {
     if(mkdir($user_dir, 0777, true)) {}
     else {
         if(file_exists($user_dir)) {
-            logwrite("We checked again and found that the file exists.");
             fail('Failed to create folder for admin - a conflicting filename exists.');
         }
         fail('Failed to create a folder for admin.');
     }
+}
+
+
+// Upload the file!
+if(isset($_FILES['file'])) {
+    $file = $_FILES['file'];
+    $filename = basename($_FILES['file']['name']);
+    $upload_path = $user_dir . '/' . $filename;
+    if(move_uploaded_file($_FILES['file']['tmp_name'], $upload_path)) {}
+    else {
+        fail('Error: failed to upload the file.');
+    }
+} else {
+    fail('Error: bad input.');
 }
 
 done();
