@@ -1,3 +1,4 @@
+/* COLORS AND FONTS */
 :root {
     --purple-gray: rgb(107,93,126);
     --sky-blue: rgb(0,138,255);
@@ -9,10 +10,14 @@
     --serif-font: Georgia, 'Times New Roman', Times, serif;
 }
 
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+ul, li {
+    list-style: none;
 }
 
 body {
@@ -83,4 +88,9 @@ input[type="file"]::file-selector-button, input[type="submit"] {
 }
 input[type="submit"]#upload_button {
     background-color: var(--lilac);
+}
+.my-files li {
+    display: inline-block;
+    width: 200px;
+    height: 24px;
 }

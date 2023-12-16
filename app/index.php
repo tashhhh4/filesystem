@@ -56,8 +56,16 @@ if(isset($_SESSION['uploaderr'])) {
     <h1>My Files</h1>
     <section class="white-block my-files">
       <ul>
-        <li>stuff</li>
-        <li>stuff</li>
+        <li>file1.txt</li>
+        <li>file2.txt</li>
+        <li>file1.txt</li>
+        <li>file2.txt</li>
+        <li>file1.txt</li>
+        <li>file2.txt</li>
+        <li>file1.txt</li>
+        <li>file2.txt</li>
+        <li>file1.txt</li>
+        <li>file2.txt</li>
       </ul>
     </section>
   </div>
